@@ -78,3 +78,22 @@ La fonction doit renvoyer le nombre de noeuds (valides ou invalides) parcourus e
 - Combien de noeuds sont parcourus (évalués) ?
 - Combien de temps votre programme met-il pour afficher sa réponse avec chaque parcours ?
 - Quel parcours est le plus efficace ?
+
+## Réalisation
+
+| Fichier | Contenu |
+|---|---|
+| `recherche_compte_est_bon.py` | `parcours_DFS`, `parcours_BFS`, `parcours_DFS_recursif` : parcours à la volée de l'arbre de l'énoncé (noeud = (expression NPI, cartons restants), D+4 enfants, élagage des noeuds invalides). Les mesures du dernier parcours sont dans `STATS`. |
+| `recherche_amelioree.py` | Les mêmes parcours avec deux améliorations : (1) chaque noeud garde la pile des valeurs, on ne génère que des enfants valides ; (2) commutativité : a+b et a×b seulement si a ≤ b. |
+| `compte_est_bon.py` | Programme principal : `echo 3 5 7 9 25 50 859 \| ./compte_est_bon.py [naif\|ameliore\|tout]` |
+| `mesures.py` | Campagne de mesures : tableaux markdown, CSV et graphiques dans `resultats/` |
+| `test_recherche.py` | Tests : `python -m pytest -q` |
+| `GUIDE_TESTS.md` | Toutes les étapes pour lancer les tests et les mesures |
+| `rapport/` | `rapport_TP4.pdf` ; `figures.py` puis `generer_rapport.py` le régénèrent à partir de `resultats/` |
+
+Exemples :
+
+```bash
+./generer_probleme.py ardu | ./compte_est_bon.py
+python mesures.py "naissance=$(./generer_probleme.py JJMMAAAA)" "impossible=$(./generer_probleme.py impossible)" "ardu=$(./generer_probleme.py ardu)"
+```
