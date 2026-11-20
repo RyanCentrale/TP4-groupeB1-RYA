@@ -88,8 +88,7 @@ La fonction doit renvoyer le nombre de noeuds (valides ou invalides) parcourus e
 | `compte_est_bon.py` | Programme principal : `echo 3 5 7 9 25 50 859 \| ./compte_est_bon.py [naif\|ameliore\|tout]` |
 | `mesures.py` | Campagne de mesures : tableaux markdown, CSV et graphiques dans `resultats/` |
 | `test_recherche.py` | Tests : `python -m pytest -q` |
-| `GUIDE_TESTS.md` | Toutes les étapes pour lancer les tests et les mesures |
-| `rapport/` | `rapport_TP4.pdf` ; `figures.py` puis `generer_rapport.py` le régénèrent à partir de `resultats/` |
+| `rapport/rapport_TP4.pdf` | Rapport du TP |
 
 Exemples :
 
